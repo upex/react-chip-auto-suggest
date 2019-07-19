@@ -1,0 +1,21 @@
+.auto-suggest{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.suggestion-list{
+  padding: 5px 35px 5px 20px;
+  font-size: .8rem;
+}
+.suggestion-list:hover, .auto-suggest-name:hover{
+  cursor: pointer;
+}
+.auto-suggest-name{
+  position: relative;
+  top: -10px;
+  left: 10px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.active-suggestion {
+  background-color: #e0e0e0;
+}

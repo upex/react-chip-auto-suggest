@@ -1,0 +1,27 @@
+.no-suggestions{
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  z-index: 999;
+  -webkit-box-shadow: 10px 3px 31px -17px rgba(0,0,0,0.55);
+  -moz-box-shadow: 10px 3px 31px -17px rgba(0,0,0,0.55);
+  box-shadow: 10px 3px 31px -17px rgba(0,0,0,0.55);
+}
+.auto-suggest-wrapper {
+  display: inline-block;
+  position: relative;
+  min-width: 400px;
+  bottom: 4px;
+}
+.suggestion-options {
+  position: absolute;
+  max-width: 600px;
+  min-width: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 999;
+  background-color: white;
+  -webkit-box-shadow: 10px 3px 31px -17px rgba(0,0,0,0.55);
+  -moz-box-shadow: 10px 3px 31px -17px rgba(0,0,0,0.55);
+  box-shadow: 10px 3px 31px -17px rgba(0,0,0,0.55);
+}
