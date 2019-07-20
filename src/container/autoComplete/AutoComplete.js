@@ -3,7 +3,7 @@ import './AutoComplete.css';
 import AutoInput from '../../components/autoInput/AutoInput';
 import List from '../../components/list/List';
 
-const  AutoComplete = ({inputRef, suggestions, chips, handleAddChip, handleRemoveChip, chipSelected }) => {
+const  AutoComplete = ({suggestions, chips, handleAddChip, handleRemoveChip, chipSelected }) => {
   const [activeSuggestion, setActiveSuggestion] = useState(0);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -47,6 +47,7 @@ const  AutoComplete = ({inputRef, suggestions, chips, handleAddChip, handleRemov
   }
   function handleOnBlur() {
     setShowSuggestions(false);
+    handleRemoveChip('');
   }
   function handleOnKeyDown(e) {
     if (e.keyCode === 13) {
@@ -108,7 +109,6 @@ const  AutoComplete = ({inputRef, suggestions, chips, handleAddChip, handleRemov
       handleOnFocus={handleOnFocus}
       handleOnBlur={handleOnBlur}
       handleOnKeyDown={handleOnKeyDown}
-      inputRef={inputRef}
       value={autoInput}/>
       <div className="suggestion-options">
       {renderUI()}

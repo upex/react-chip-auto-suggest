@@ -5,7 +5,6 @@ import Chip from '../../components/chip/Chip';
 
 const  AutoCompleteChip = ({ suggestions }) => {
   const [chips, setChips] = useState([]);
-  const [inputNode, setInputNode] = useState('');
   const [autoSuggestions, setAutoSuggestions] = useState([]);
   const [chipSelected, setChipSelected] = useState(false);
 
@@ -40,8 +39,12 @@ const  AutoCompleteChip = ({ suggestions }) => {
     handleRemove('', chip);
   }
 
-  function focusInput() {
-    inputNode.focus();
+  function focusInput(e) {
+    let children = e.target.children;
+    if (children.length) {
+      const wrapper = children[children.length - 1].children[0];
+      if(wrapper) wrapper.focus();
+    }
   }
 
   function renderUI() {
@@ -64,7 +67,6 @@ const  AutoCompleteChip = ({ suggestions }) => {
     <div className="chips" onClick={focusInput}>
       {renderUI()}
       <AutoCompleteInput
-      inputRef={node => setInputNode(node)}
       suggestions={autoSuggestions}
       chips={chips}
       handleAddChip={addChip}
